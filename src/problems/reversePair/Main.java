@@ -9,7 +9,15 @@ public class Main {
 //        head = operations.reversePairRecursive(head);
 //        operations.display(head);
 
-        head = operations.reversePairWithoutRecursive();
+
+//        Pair Reverse
+//        head = operations.reversePairWithoutRecursive();
+        operations.display(head);
+
+        System.out.println();
+
+//        Reverse a K node
+        head = operations.reverseKNode(head, 5);
         operations.display(head);
     }
 }

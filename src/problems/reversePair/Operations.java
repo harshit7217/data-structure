@@ -3,6 +3,25 @@ package problems.reversePair;
 public class Operations {
     ListNode head;
 
+//    Reverse a linked list in k node group using recursion
+    public ListNode reverseKNode(ListNode node, int k){
+        ListNode prev = null, curr = node, next = null;
+        int count = k;
+
+        while(curr != null && count > 0){
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+            count--;
+        }
+
+        if(next != null){
+            node.next = reverseKNode(next, k);
+        }
+        return prev;
+    }
+
 //    Reverse a linked list in pairs by using without recursive
     public ListNode reversePairWithoutRecursive(){
         ListNode temp1 = null;
@@ -58,10 +77,17 @@ public class Operations {
         ListNode n2 = new ListNode(2);
         ListNode n3 = new ListNode(3);
         ListNode n4 = new ListNode(4);
-
+        ListNode n5 = new ListNode(5);
+        ListNode n6 = new ListNode(6);
+        ListNode n7 = new ListNode(7);
+        ListNode n8 = new ListNode(8);
         head = n1;
         n1.next = n2;
         n2.next = n3;
         n3.next = n4;
+        n4.next = n5;
+        n5.next = n6;
+        n6.next = n7;
+        n7.next = n8;
     }
 }
